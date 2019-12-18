@@ -3,8 +3,11 @@ defmodule MnesiaStuff do
 
   def start(_type, _args) do
     Logger.info("starting up")
+
     Persistence.Mnesia.init()
-    Logger.info("iknitted the stuff")
+    {:ok, _pid} = Producer.start_link()
+    {:ok, _pid} = Consumer.start_link()
+
     {:ok, self()}
   end
 
