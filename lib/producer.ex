@@ -1,5 +1,6 @@
 defmodule Producer do
   use GenServer
+#  import Ecto
   require Logger
 
   #  client
@@ -22,7 +23,7 @@ defmodule Producer do
 
   @impl true
   def handle_info(:something, state) do
-    Logger.info("hello")
+    :mnesia.dirty_write({Hello, make_ref(), "helloozzo"})
     {:noreply, state}
   end
 
