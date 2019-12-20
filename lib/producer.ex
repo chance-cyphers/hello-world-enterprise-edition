@@ -17,6 +17,7 @@ defmodule Producer do
 
   @impl true
   def init(_opts) do
+    Logger.info("starting producer")
     :timer.send_interval(2000, :something)
     {:ok, {}}
   end

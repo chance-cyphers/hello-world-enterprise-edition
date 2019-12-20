@@ -12,6 +12,7 @@ defmodule Consumer do
 
   @impl true
   def init(_opts) do
+    Logger.info("starting consumer")
     {:ok, _} = :mnesia.subscribe({:table, Hello, :simple})
     Logger.info("all subscribed")
     {:ok, {}}

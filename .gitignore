@@ -23,4 +23,5 @@ erl_crash.dump
 mnesia_stuff-*.tar
 
 Mnesia.nonode@nohost/
+Mnesia.*
 .idea/
